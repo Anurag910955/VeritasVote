@@ -1,4 +1,4 @@
-# Votingsystem
+
 # VeritasVote - Secure and Transparent Online Voting Platform
 
 VeritasVote is a decentralized online voting platform designed to ensure secure, transparent, and accessible elections. It leverages blockchain technology, AI, and decentralized identity to enhance the integrity and efficiency of the voting process.
