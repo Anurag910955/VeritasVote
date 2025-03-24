@@ -77,26 +77,7 @@ VeritasVote is a decentralized online voting platform designed to ensure secure,
 2.  Register or log in as a voter.
 3.  View the list of candidates and cast your vote.
 4.  View the real-time election results and analytics.
-## Project Structure
-veritasvote/
-├── backend/
-│   ├── server.js
-│   ├── routes/
-│   ├── controllers/
-│   ├── models/
-│   ├── config/
-│   └── middleware/
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── hooks/
-│   │   └── App.js
-│   └── public/
-├── blockchain/
-│   ├── contract.sol
-│   ├── deployment.js
-│   └── hardhat.config.js
+
 ## Technologies
 * **Frontend:** React.js, React Router, Axios
 * **Backend:** Node.js, Express.js, PostgreSQL/MongoDB
