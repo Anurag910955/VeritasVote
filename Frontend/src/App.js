@@ -13,21 +13,24 @@ function App() {
   useEffect(() => {
     axios.get('/api/users/test')
       .then(response => setMessage(response.data.message))
-      .catch(error => console.error(error));
+      .catch(error => console.error('Error fetching data:', error));
   }, []);
 
   return (
     <Router>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/register">Register</Link></li>
-          <li><Link to="/login">Login</Link></li>
-          <li><Link to="/vote">Vote</Link></li>
-          <li><Link to="/candidates">Candidates</Link></li>
+      <nav style={{ padding: '1rem', backgroundColor: '#4CAF50' }}>
+        <ul style={{ listStyleType: 'none', display: 'flex', gap: '1rem' }}>
+          <li><Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Home</Link></li>
+          <li><Link to="/register" style={{ textDecoration: 'none', color: 'white' }}>Register</Link></li>
+          <li><Link to="/login" style={{ textDecoration: 'none', color: 'white' }}>Login</Link></li>
+          <li><Link to="/vote" style={{ textDecoration: 'none', color: 'white' }}>Vote</Link></li>
+          <li><Link to="/candidates" style={{ textDecoration: 'none', color: 'white' }}>Candidates</Link></li>
         </ul>
       </nav>
-      <p>{message}</p>
+      <div style={{ padding: '1rem' }}>
+        <h2>Welcome to VeritasVote</h2>
+        <p>{message}</p>
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
