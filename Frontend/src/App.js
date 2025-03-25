@@ -6,6 +6,8 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Vote from './pages/Vote';
 import Candidates from './pages/Candidates';
+import './styles/style.css';
+
 
 function App() {
   const [message, setMessage] = useState('');
