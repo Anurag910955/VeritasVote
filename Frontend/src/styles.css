@@ -19,15 +19,16 @@ nav {
     background-color: #4CAF50;
     padding: 15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-
-    
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
 }
 
 nav a {
