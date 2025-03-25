@@ -1,4 +1,3 @@
-// frontend/src/pages/Login.js
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -9,8 +8,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/users/login', { username, password });
-      console.log(response.data);
+      await axios.post('/api/users/login', { username, password });
       alert('Login successful!');
     } catch (error) {
       console.error(error);
@@ -19,14 +17,11 @@ function Login() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <button type="submit">Login</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input type="text" placeholder="Username" onChange={e => setUsername(e.target.value)} />
+      <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
+      <button type="submit">Login</button>
+    </form>
   );
 }
 

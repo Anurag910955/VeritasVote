@@ -1,4 +1,3 @@
-// frontend/src/pages/Candidates.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -12,14 +11,9 @@ function Candidates() {
   }, []);
 
   return (
-    <div>
-      <h1>Candidates</h1>
-      <ul>
-        {candidates.map(candidate => (
-          <li key={candidate.id}>{candidate.name} - {candidate.party}</li>
-        ))}
-      </ul>
-    </div>
+    <ul>
+      {candidates.map(c => <li key={c.id}>{c.name} - {c.party}</li>)}
+    </ul>
   );
 }
 
