@@ -6,8 +6,6 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Vote from './pages/Vote';
 import Candidates from './pages/Candidates';
-import './styles/style.css';
-
 
 function App() {
   const [message, setMessage] = useState('');
@@ -15,13 +13,13 @@ function App() {
   useEffect(() => {
     axios.get('/api/users/test')
       .then(response => setMessage(response.data.message))
-      .catch(error => console.error('Error fetching data:', error));
+      .catch(error => console.error(error));
   }, []);
 
   return (
     <Router>
-      <nav style={{ padding: '1rem', backgroundColor: '#4CAF50' }}>
-        <ul style={{ listStyleType: 'none', display: 'flex', gap: '1rem' }}>
+      <nav style={{ backgroundColor: '#4CAF50', padding: '10px' }}>
+        <ul style={{ listStyleType: 'none', display: 'flex', justifyContent: 'space-around' }}>
           <li><Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Home</Link></li>
           <li><Link to="/register" style={{ textDecoration: 'none', color: 'white' }}>Register</Link></li>
           <li><Link to="/login" style={{ textDecoration: 'none', color: 'white' }}>Login</Link></li>
@@ -29,10 +27,21 @@ function App() {
           <li><Link to="/candidates" style={{ textDecoration: 'none', color: 'white' }}>Candidates</Link></li>
         </ul>
       </nav>
-      <div style={{ padding: '1rem' }}>
-        <h2>Welcome to VeritasVote</h2>
+
+      <div style={{ padding: '20px', lineHeight: '1.6' }}>
+        <h1>Welcome to VeritasVote</h1>
         <p>{message}</p>
+        <p>
+          VeritasVote is an innovative and transparent online voting system designed to ensure fair and secure elections. Our platform allows users to register, log in, and cast their votes seamlessly. With real-time updates and secure data handling, we aim to build trust in the voting process.
+        </p>
+        <p>
+          This system provides a user-friendly interface where voters can view candidates, understand their manifestos, and make informed decisions. Built using modern web technologies, VeritasVote ensures scalability, reliability, and security.
+        </p>
+        <p>
+          Join us in transforming the voting landscape by making elections more accessible and trustworthy. Whether you are a voter or a candidate, VeritasVote offers a streamlined experience tailored to meet the needs of modern elections.
+        </p>
       </div>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
